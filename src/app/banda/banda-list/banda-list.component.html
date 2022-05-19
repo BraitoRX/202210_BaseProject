@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>Number of members</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr (click)="onSelected(banda)" *ngFor="let banda of Bandas">
+
+          <td>{{ banda.id }}</td>
+          <td>{{ banda.name }}</td>
+          <td>{{ banda.numberOfMembers }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="col-sm-4">
+    <div *ngIf="activate">
+      <app-banda-detail [selectedSbanda]="selectedBanda" ></app-banda-detail>
+    </div>
+  </div>
+
+
+    <tr>
+      Average number of members (rounded up):
+      {{
+        promedio
+      }}
+    </tr>
+
+
+</div>
